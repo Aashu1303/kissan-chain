@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'onboarding_model.dart';
 export 'onboarding_model.dart';
 
@@ -45,7 +43,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   height: MediaQuery.sizeOf(context).height * 1.0,
                   child: Stack(
@@ -66,13 +64,13 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: ClipRRect(
                                           borderRadius:
@@ -89,7 +87,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -108,7 +106,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -120,7 +118,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                               .titleSmall
                                               .override(
                                                 fontFamily: 'Poppins',
-                                                color: Color(0xC8FFFFFF),
+                                                color: const Color(0xC8FFFFFF),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -129,13 +127,13 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -146,10 +144,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                             width: 170.0,
                                             height: 50.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -165,7 +163,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                                           FontWeight.w500,
                                                     ),
                                             elevation: 2.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -181,9 +179,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         ],
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.85, 0.7),
+                        alignment: const AlignmentDirectional(0.85, 0.7),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: smooth_page_indicator.SmoothPageIndicator(
                             controller: _model.pageViewController ??=
@@ -193,7 +191,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             onDotClicked: (i) async {
                               await _model.pageViewController!.animateToPage(
                                 i,
-                                duration: Duration(milliseconds: 500),
+                                duration: const Duration(milliseconds: 500),
                                 curve: Curves.ease,
                               );
                               safeSetState(() {});
