@@ -82,7 +82,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'AddProduct',
               path: 'addProduct',
-              builder: (context, params) => const AddProductWidget(),
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'AddProduct')
+                  : const AddProductWidget(),
             ),
             FFRoute(
               name: 'editProfile',

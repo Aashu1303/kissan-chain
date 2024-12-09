@@ -10,21 +10,36 @@ class AddProductModel extends FlutterFlowModel<AddProductWidget> {
   FocusNode? userNameFocusNode;
   TextEditingController? userNameTextController;
   String? Function(BuildContext, String?)? userNameTextControllerValidator;
+  String? _userNameTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Product Name is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for shortBio widget.
   FocusNode? shortBioFocusNode;
   TextEditingController? shortBioTextController;
   String? Function(BuildContext, String?)? shortBioTextControllerValidator;
-  // State field(s) for maxBid widget.
-  FocusNode? maxBidFocusNode;
-  TextEditingController? maxBidTextController;
-  String? Function(BuildContext, String?)? maxBidTextControllerValidator;
+  String? _shortBioTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for minBid widget.
   FocusNode? minBidFocusNode;
   TextEditingController? minBidTextController;
   String? Function(BuildContext, String?)? minBidTextControllerValidator;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    userNameTextControllerValidator = _userNameTextControllerValidator;
+    shortBioTextControllerValidator = _shortBioTextControllerValidator;
+  }
 
   @override
   void dispose() {
@@ -33,9 +48,6 @@ class AddProductModel extends FlutterFlowModel<AddProductWidget> {
 
     shortBioFocusNode?.dispose();
     shortBioTextController?.dispose();
-
-    maxBidFocusNode?.dispose();
-    maxBidTextController?.dispose();
 
     minBidFocusNode?.dispose();
     minBidTextController?.dispose();

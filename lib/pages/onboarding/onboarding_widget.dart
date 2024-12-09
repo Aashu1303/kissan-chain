@@ -93,7 +93,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'Bid Your Antiques',
+                                        'Bid Your HARDWORK',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -113,7 +113,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Find hidden Gems around your city, by exploring the curated lists of others.',
+                                          'One stop solution for farmers to get what they deserve.',
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
